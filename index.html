@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexander Official — AlexVPNS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" type="image/svg+xml">
+
+<style>
+:root{
+  --bg: radial-gradient(1200px 600px at 10% -10%, #1a2a4a, transparent),
+       radial-gradient(800px 400px at 90% 10%, #2a1a4a, transparent),
+       #06070c;
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.18);
+  --text: #f4f6fb;
+  --sub: #a8b0c3;
+  --accent: #6db1ff;
+  --shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+.light{
+  --bg: radial-gradient(1200px 600px at 10% -10%, #dbe7ff, transparent),
+        radial-gradient(800px 400px at 90% 10%, #f1ddff, transparent),
+        #f4f6fb;
+  --glass: rgba(255,255,255,0.6);
+  --border: rgba(0,0,0,0.08);
+  --text: #0e1220;
+  --sub: #5f6680;
+  --accent: #0066cc;
+  --shadow: 0 20px 40px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+.container{max-width:1150px;margin:auto;padding:60px 22px;}
+header{display:flex;justify-content:space-between;align-items:center;}
+h1{font-size:42px;margin:0;}
+.subtitle{max-width:520px;margin-top:12px;color:var(--sub);}
+.toggle{background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(14px);padding:10px 18px;border-radius:14px;cursor:pointer;color:var(--text);}
+.toggle:hover{transform:scale(1.05);transition:0.2s;}
+section{margin-top:80px;}
+h2{font-size:30px;margin-bottom:28px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;}
+.glass{background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(18px);border-radius:22px;padding:28px;transition:transform .25s ease,box-shadow .25s ease,opacity .5s ease;box-shadow:var(--shadow);opacity:0;transform:translateY(20px);}
+.glass.visible{opacity:1;transform:translateY(0);}
+.glass:hover{transform:translateY(-6px);box-shadow:0 30px 50px rgba(0,0,0,.45);}
+.plan-title{font-size:22px;margin:0 0 8px;}
+.location{font-size:14px;color:var(--sub);margin-bottom:14px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.location img{width:22px;height:16px;}
+ul{padding-left:18px;color:var(--sub);}
+.price{margin-top:20px;font-size:28px;font-weight:700;}
+.price span{font-size:14px;color:var(--sub);font-weight:400;}
+.services ul{line-height:1.9;}
+.telegram-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;}
+.telegram-card{background:var(--glass);border-radius:22px;padding:18px;display:flex;align-items:center;gap:12px;transition:transform .3s ease,box-shadow .3s ease;}
+.telegram-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px rgba(0,0,0,.45);}
+.telegram-card img{width:48px;height:48px;border-radius:12px;}
+.telegram-info{display:flex;flex-direction:column;}
+.telegram-info strong{font-size:16px;}
+.telegram-info span{font-size:13px;color:var(--sub);}
+.telegram-info a{margin-top:6px;font-size:13px;color:var(--accent);}
+button.action-btn{margin-top:12px;padding:10px 16px;background:var(--accent);border:none;border-radius:12px;color:#fff;cursor:pointer;transition:transform .25s ease;}
+button.action-btn:hover{transform:scale(1.05);}
+footer{margin-top:100px;padding-top:30px;border-top:1px solid var(--border);color:var(--sub);font-size:14px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+/* Splash screen */
+#splash{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);display:flex;justify-content:center;align-items:center;flex-direction:column;z-index:9999;transition:opacity 1s;}
+#splash.hidden{opacity:0;pointer-events:none;}
+#splash h1{font-size:50px;animation:fadeScale 2s ease forwards;}
+#splash p{margin-top:12px;color:var(--accent);font-size:20px;animation:fadeScale 2s 0.5s ease forwards;}
+@keyframes fadeScale{0%{opacity:0;transform:scale(0.8);}100%{opacity:1;transform:scale(1);}}
+@media(max-width:600px){h1{font-size:32px;}h2{font-size:24px;} .toggle{padding:8px 14px;}}
+</style>
+</head>
+<body>
+
+<div id="splash">
+<h1>BIOGRAPHY OF:</h1>
+<p>Alexander Official</p>
+</div>
+
+<div class="container">
+
+<header>
+<div>
+<h1>AlexVPNS</h1>
+<p class="subtitle">Premium VPS, VPN we Marzban esasly hyzmatlar. 7/24 goldaw.</p>
+</div>
+<button class="toggle" onclick="toggleTheme()">Dark / Light</button>
+</header>
+
+<section>
+<h2>VPS Paketleri</h2>
+<div class="grid">
+<div class="glass">
+<h3 class="plan-title">BasicBlock VPS</h3>
+<div class="location">
+<img src="https://flagcdn.com/w20/fi.png"> FI
+<img src="https://flagcdn.com/w20/fr.png"> FR
+<img src="https://flagcdn.com/w20/us.png"> USA
+<img src="https://flagcdn.com/w20/de.png"> DE
+<img src="https://flagcdn.com/w20/nl.png"> NL
+<img src="https://flagcdn.com/w20/ru.png"> RU
+</div>
+<ul>
+<li>RAM:1GB</li>
+<li>vCPU:1</li>
+<li>Storage:10GB</li>
+<li>Port:100 Mbps</li>
+</ul>
+<div class="price">90 TMT <span></span></div>
+<button class="action-btn" onclick="window.open('https://t.me/alexvpns','_blank')">Order Now</button>
+</div>
+
+<div class="glass">
+<h3 class="plan-title">StandartBlock VPS</h3>
+<div class="location">
+<img src="https://flagcdn.com/w20/fi.png"> FI
+<img src="https://flagcdn.com/w20/fr.png"> FR
+<img src="https://flagcdn.com/w20/us.png"> USA
+<img src="https://flagcdn.com/w20/de.png"> DE
+<img src="https://flagcdn.com/w20/nl.png"> NL
+<img src="https://flagcdn.com/w20/pl.png"> PL
+<img src="https://flagcdn.com/w20/ru.png"> RU
+</div>
+<ul>
+<li>RAM:2GB</li>
+<li>vCPU:2</li>
+<li>Storage:20GB</li>
+<li>Port:100–200 Mbps</li>
+</ul>
+<div class="price">130 TMT <span></span></div>
+<button class="action-btn" onclick="window.open('https://t.me/alexvpns','_blank')">Order Now</button>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Goşmaça Hyzmatlar</h2>
+<div class="glass services">
+<ul>
+<li>VPS-lere durli scriptleri gurnap bermek</li>
+<li>Marzban blok panellerini obnavlene eder ýaly edip bermek</li>
+<li>Internet ugryndaky beyleki hyzmatlar.. </li>
+<li>7/24 online goldaw</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Telegram Kanallary & Akkauntlar</h2>
+<div class="telegram-cards">
+
+<div class="telegram-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Alexservers Logo">
+<div class="telegram-info">
+<strong>@alexservers</strong>
+<span>Public kanal</span>
+<a href="https://t.me/alexservers" target="_blank">Open in Telegram</a>
+</div>
+</div>
+
+<div class="telegram-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Alexvpns Logo">
+<div class="telegram-info">
+<strong>@alexvpns</strong>
+<span>Public account</span>
+<a href="https://t.me/alexvpns" target="_blank">Open in Telegram</a>
+</div>
+</div>
+
+<div class="telegram-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Aboutmyselfalex Logo">
+<div class="telegram-info">
+<strong>@aboutmyselfalex</strong>
+<span>About Myself</span>
+<a href="https://t.me/aboutmyselfalex" target="_blank">Open in Telegram</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>Alexander · Network & VPS Solutions<br>Tejribe: 2018-den bäri</p>
+<p>Telegram: <a href="https://t.me/alexvpns" target="_blank">@alexvpns</a> · Instagram: <a href="https://instagram.com/alexanderoff.store" target="_blank">@alexanderoff.store</a></p>
+</footer>
+
+</div>
+
+<script>
+// Dark/Light toggle
+function toggleTheme(){document.body.classList.toggle("light");}
+
+// Splash screen
+window.addEventListener('load', ()=>{
+  const splash=document.getElementById('splash');
+  setTimeout(()=>{splash.classList.add('hidden'); document.querySelectorAll('.glass').forEach((el,i)=>{
+    setTimeout(()=>{el.classList.add('visible');},i*200);
+  })},2500);
+});
+</script>
+</body>
+</html>
